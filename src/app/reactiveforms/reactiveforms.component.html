@@ -1,0 +1,109 @@
+<div class="container-mx-auto px-4">
+    <h1 style="text-align:center; font-size: 200%"><strong>Capstone Project Proposal Form</strong></h1>
+    <br />
+    <div class="shadow-lg w-[60%] m-auto p-4">
+        <span style="float: right" class="text-red-400"
+            >* required field</span
+        >
+        <h2>Section I - Company and Mentor Information:</h2>
+        <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Contact Name</mat-label>
+                    <input matInput placeholder="Contact Name"value="" formControlName="name" required/>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Contact Job Title</mat-label>
+                    <input matInput placeholder="Contact Job Title" value="" formControlName="title" required  />
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Contact Email</mat-label>
+                    <input matInput placeholder="Contact Email"value="" formControlName="email" required />
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Contact Phone</mat-label>
+                    <input matInput placeholder="Contact Phone" value=""formControlName="phone"required />
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Organization/Company Name</mat-label>
+                    <input
+                        matInput placeholder="Organization/Company Name" value="" formControlName="companyName" required/>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Organization Address</mat-label>
+                    <input matInput placeholder="Organization Address"
+                        value="" formControlName="companyAddress" required />
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Organization Website</mat-label>
+                    <input matInput placeholder="Organization Website" value="" formControlName="companyWebsite" required/>
+                </mat-form-field>
+            </div>
+
+            <h2>Section II - Project for Which Students Will Participate:</h2>
+
+            <div class="form-group">
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Project Title</mat-label>
+                    <input matInput placeholder="Project Title" value=""/>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Description of Project</mat-label>
+                    <input matInput placeholder="(Please give a brief description of the project, including background, problem statement, and objectives)" value="" />
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Technical Skills</mat-label>
+                    <input matInput placeholder="(What technical skills/requirements should your ideal students have for this project?)" value=""/>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Duties of Student</mat-label>
+                    <input matInput placeholder="(Please indicate the tasks/deliverables and the approximate amount of time the students will spend on each as a percentage of their overall time.)" value=""/>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Benefit of the Project</mat-label>
+                    <input matInput placeholder="(Please indicate how the project benefits the student’s educational and professional growth)" value=""/>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Company provide to students to carry out the project</mat-label>
+                    <input matInput placeholder="(Such as training, data, equipment, traveling, etc.)"value=""/>
+                </mat-form-field>
+            </div>
+
+            <button
+                [disabled]="!regForm.valid" mat-button color="primary">Submit</button>
+        </form>
+    </div>
+</div>

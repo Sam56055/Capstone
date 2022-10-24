@@ -1,0 +1,29 @@
+<div class ="container" flexbox=" auto">
+    <table  class ="p-5 mb-4 bg-light rounded 3">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Firstname</th>
+                <th scope="col">LastName</th>
+                <th scope="col">Address</th>
+                <th scope="col">City</th>
+                <th scope="col">State</th>
+                <th scope="col">index</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor ="let student of students let i = index">
+                <td> {{student.id}}</td>
+                <td>{{student.firstName}}</td>
+                <td>{{student.lastName}}</td>
+                <td>{{student.address}}</td>
+                <td>{{student.city}}</td>
+                <td>{{student.state}}</td>
+                <td>(index {{i}})</td>
+                
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <button  mat-button color="primary" (click)="addNew()">Add Student</button>
