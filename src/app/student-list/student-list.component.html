@@ -1,3 +1,4 @@
+
 <div class ="container" flexbox=" auto">
     <table  class ="p-5 mb-4 bg-light rounded 3">
         <thead>
@@ -13,16 +14,19 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor ="let student of students let i = index">
-                <td> {{student.id}}</td>
-                <td>{{student.firstName}}</td>
-                <td>{{student.lastName}}</td>
-                <td>{{student.address}}</td>
-                <td>{{student.city}}</td>
-                <td>{{student.state}}</td>
-                <td>(index {{i}})</td>
-                
-            </tr>
+            <ng-container *ngFor ="let student of students let i = index">
+                <tr >
+                    <td> {{student._id}}</td>
+                    <td>{{student.firstname}}</td>
+                    <td>{{student.lastname}}</td>
+                    <td>{{student.street}}</td>
+                    <td>{{student.city}}</td>
+                    <td>{{student.state}}</td>
+                    <td>(index {{i}})</td>
+                    
+                </tr> <span>><button mat-button (click)="onDelete(student._id)">Delete</button></span>
+            </ng-container>
+
         </tbody>
     </table>
     </div>

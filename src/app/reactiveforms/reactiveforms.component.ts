@@ -31,7 +31,7 @@ export class ReactiveformsComponent implements OnInit {
   onSubmit() {
     console.log(this.regForm.value);
     this.regServ.register(this.regForm.value).subscribe((response: any) => {
-      console.log('Success!');
+      console.log(response);
     });
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RegistrationService } from '../services/registration/registration.service';
 
 @Component({
@@ -8,6 +9,7 @@ import { RegistrationService } from '../services/registration/registration.servi
     styleUrls: ['./mean-test.component.css'],
 })
 export class MeanTestComponent implements OnInit {
+
     regform: FormGroup;
 
     cityZipCodes: { [x: string]: Array<any> } = {
@@ -18,29 +20,29 @@ export class MeanTestComponent implements OnInit {
             '30062',
             '30062',
             '30063',
-            ' 30064',
-            ' 30065',
-            ' 30066',
-            ' 30067',
+            '30064',
+            '30065',
+            '30066',
+            '30067',
             '30068',
             '30069',
         ],
         Woodstock: ['30188', '30189'],
     };
 
-    constructor(private fb: FormBuilder, private serv: RegistrationService) {}
+    constructor(private fb: FormBuilder, private serv: RegistrationService,  private route: Router) {}
 
     ngOnInit(): void {
         this.regform = this.fb.group({
             firstname: ['', Validators.required],
             lastname: ['', Validators.required],
-            address: this.fb.group({
                 street: ['', Validators.required],
                 zip: ['', Validators.required],
                 city: ['', Validators.required],
                 state: ['', Validators.required],
-            }),
         });
+
+
 
         this.serv.getList().subscribe((data)=> {
             console.log(data)
@@ -65,7 +67,7 @@ export class MeanTestComponent implements OnInit {
     }
 
     onZipChange() {
-        this.getCityByZip(this.regform.get('address')?.get('zip')?.value);
+        this.getCityByZip(this.regform.get('zip')?.value);
     }
 
     getCityByZip(zip: string) {
@@ -73,10 +75,10 @@ export class MeanTestComponent implements OnInit {
             if (this.cityZipCodes.hasOwnProperty(city)) {
                 // City contains zip code
                 if (this.cityZipCodes[city].includes(zip)) {
-                    this.regform.get('address')?.get('city')?.setValue(city);
+                    this.regform.get('city')?.setValue(city);
                     return;
                 } else {
-                    this.regform.get('address')?.get('city')?.setValue('');
+                    this.regform.get('city')?.setValue('');
                 }
             }
         }
@@ -85,7 +87,11 @@ export class MeanTestComponent implements OnInit {
         this.serv.register(this.regform.value).subscribe((response: any) => {
             console.log(response);
             console.log("New student registerd")
+        this.route.navigate([''])
+
             
         });
     }
+
+
 }

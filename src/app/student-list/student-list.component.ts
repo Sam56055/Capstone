@@ -20,10 +20,15 @@ export class StudentListComponent implements OnInit {
     })
   }
 
+
   addNew() {
     this.route.navigate(['/section3'])
 
   }
+
+  onDelete(id: string){
+    this.serv.deleteStudent(id);
+}
 
   ngOnInit(): void {
     this.getStudentList();

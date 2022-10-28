@@ -22,7 +22,13 @@ export class RegistrationService {
   }
 
   getList() {
-
     return this.http.get(this.url + "/students")
+  }
+
+  deleteStudent(studentId: string) {
+    this.http.delete(this.url + "/students/" + studentId).subscribe(()=> {
+      console.log()
+    })
+
   }
 }

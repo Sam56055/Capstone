@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 
 //define a schema/ blueprint NOTE: id is not a part of the schema
 const studentSchema = new mongoose.Schema({
-    firstName: { type: String, required: true},
-    lastName: { type: String, required: true},
-    address:{ type: String, required: true},
+    firstname: { type: String, required: true},
+    lastname: { type: String, required: true},
+    street:{ type: String, required: true},
     zip:{ type: String, required: true},
     city:{ type: String, required: true},
-    state:{ type: String, required: true},
+    state:{ type: String, required: true}
 
 });
 

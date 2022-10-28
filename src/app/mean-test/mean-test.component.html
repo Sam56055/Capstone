@@ -88,7 +88,6 @@ sending you a google meet link now.
                 <mat-label>LastName</mat-label>
                 <input matInput placeholder="Lastname" value="" formControlName="lastname" required />
             </mat-form-field>
-            <div class="form-group" formGroupName="address">
                 <p><strong> Address</strong></p>
                 <mat-form-field class="w-full" appearance="fill">
                     <mat-label>Street</mat-label>
@@ -121,7 +120,6 @@ sending you a google meet link now.
                         <input matInput placeholder="State" value="" formControlName="state" required />
                     </mat-form-field>
                 </div>
-            </div>
             <button
             [disabled]="!regform.valid" mat-button color="primary">Submit</button>
         
